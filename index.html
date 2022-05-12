@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="text/html; charset-utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="public/images/icon.png" type="image/png" sizes="16x16">
+
+    <title>Emotify</title>
+    <link rel="stylesheet" type="text/css" href="public/css/main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <script defer src="public/js/face-api.min.js"></script>
+    <script defer src="public/js/main.js"></script>
+    <script src="public/js/siriwave.js"></script>
+    <script src="public/js/youtube.js"></script>
+    <style>
+        canvas {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shink-0">
+        <div id="videoContainer">
+            <video class="video" style="position: absolute; z-index: 1; background-color: #f3f3f3;" width="200" height="150" id=video autoplay muted></video>
+        </div>
+        <div class="vw-100 flex centerEverything" style="flex-direction: column; height: 100vh;">
+            <div class="container text-center" style="color: #fff;">
+                <h1>😀😭😡🤮😱😳😛🎵</h1>
+                <h1 id='emotion' style="font-size: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Your Current Emotion</h1>
+                <h6>Change your expression to change the song!</h6>
+                <p class="mt-4" style="font-size: 8px; width: 200px; margin: auto;">DISCLAIMER: The camera is watching you! This application is not representative of true emotion. <br /> Made By Team Compiling...</p>
+            </div>
+            <div id="siri" class="vw-100"></div>
+
+            <div id="player" style="margin: 0 auto; position: absolute; z-index: -1; filter: blur(50px);"></div>
+            <div id="siri" class="vw-100"></div>
+        </div>
+    </main>
+    <script>
+        var siriWave = new SiriWave({
+            container: document.getElementById('siri'),
+            width: $(document).width(),
+            height: 100,
+            speed: 0.06,
+            color: '#FC0D1B',
+            frequency: 3,
+            autostart: true
+        });
+    </script>
+</body>
+</html>
